@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MD Zaheer Hussain J F — B.Tech CSBS student portfolio.">
+  <title>MD Zaheer Hussain J F | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07090f; --card:#0d111a; --card2:#111722; --text:#f4f7fb;
+      --muted:#a7b0c0; --line:rgba(255,255,255,.09); --accent:#66e3ff;
+      --accent2:#8b7cff; --max:1120px; --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:
+      radial-gradient(circle at 80% 10%,rgba(102,227,255,.10),transparent 30%),
+      radial-gradient(circle at 10% 40%,rgba(139,124,255,.08),transparent 30%),var(--bg);
+      color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(92%,var(--max));margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,9,15,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;font-size:1.05rem;letter-spacing:.5px}.logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;list-style:none;color:var(--muted);font-size:.9rem}
+    .nav-links a:hover{color:var(--text)}
+    .menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+    section{padding:105px 0}
+    .hero{min-height:100vh;display:grid;place-items:center;padding-top:130px}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:center}
+    .eyebrow{color:var(--accent);font-size:.9rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+    h1{font-size:clamp(3rem,8vw,6.6rem);line-height:.95;letter-spacing:-5px;margin-bottom:25px}
+    h1 span{background:linear-gradient(90deg,var(--accent),#b1a7ff);-webkit-background-clip:text;color:transparent}
+    .hero p{max-width:680px;color:var(--muted);font-size:1.08rem}
+    .buttons{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:.9rem;transition:.25s}
+    .btn.primary{background:var(--text);color:#080a10}.btn:hover{transform:translateY(-3px);border-color:rgba(102,227,255,.5)}
+    .hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));padding:28px;border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+    .avatar{width:150px;height:150px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;font-size:3rem;font-weight:800;
+      background:linear-gradient(135deg,#182c35,#1d1940);border:1px solid rgba(102,227,255,.3);color:var(--accent)}
+    .hero-card h3{text-align:center;margin-bottom:5px}.hero-card p{text-align:center;color:var(--muted);font-size:.9rem}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+    .stat{padding:14px;border:1px solid var(--line);border-radius:15px;text-align:center}.stat b{display:block;color:var(--accent);font-size:1.1rem}.stat small{color:var(--muted)}
+    .section-head{margin-bottom:42px}.section-head .eyebrow{margin-bottom:8px}
+    h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-2px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+    .panel p{color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .tag{padding:9px 13px;border:1px solid var(--line);border-radius:999px;color:#dce4ef;background:rgba(255,255,255,.025);font-size:.85rem}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(102,227,255,.3)}
+    .card .icon{font-size:1.6rem;margin-bottom:15px}.card h3{margin-bottom:9px}.card p{color:var(--muted);font-size:.92rem}
+    .timeline{border-left:1px solid var(--line);margin-left:10px;padding-left:28px}.timeline-item{position:relative;margin-bottom:30px}
+    .timeline-item:before{content:"";position:absolute;left:-35px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px rgba(102,227,255,.6)}
+    .date{font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+    .timeline h3{margin:5px 0}.timeline p{color:var(--muted)}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .contact-item{display:block;padding:20px;border:1px solid var(--line);background:var(--card);border-radius:16px}
+    .contact-item small{color:var(--muted);display:block;margin-bottom:5px}.contact-item:hover{border-color:rgba(102,227,255,.35)}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem;text-align:center}
+    .reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:800px){
+      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#080b12;padding:20px;flex-direction:column;gap:18px}
+      .nav-links.open{display:flex}.menu{display:block}
+      .hero-grid,.about-grid,.contact{grid-template-columns:1fr}.cards{grid-template-columns:1fr}
+      h1{letter-spacing:-3px}.hero-card{max-width:400px;margin:auto}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">ZAHEER<span>.</span></a>
+    <button class="menu" aria-label="Open menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">B.Tech CSBS • III/V</div>
+      <h1>MD Zaheer<br><span>Hussain J F</span></h1>
+      <p>I’m a curious Computer Science and Business Systems student who enjoys turning ideas into practical digital experiences. I’m building my foundation in Python, web development, cybersecurity, and emerging technologies.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Explore My Work</a>
+        <a class="btn" href="mailto:hussainzaheer364@gmail.com">Let's Connect</a>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="avatar">ZH</div>
+      <h3>Computer Science & Business Systems</h3>
+      <p>Student • Learner • Builder</p>
+      <div class="stats">
+        <div class="stat"><b>Python</b><small>Core Skill</small></div>
+        <div class="stat"><b>CSBS</b><small>B.Tech</small></div>
+        <div class="stat"><b>2026</b><small>Internship</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">01 — About</div><h2>A little about me.</h2></div>
+    <div class="about-grid">
+      <div class="panel reveal">
+        <p>I’m MD Zaheer Hussain J F, a B.Tech Computer Science and Business Systems student. I like learning by building, experimenting with technology, and understanding how software can solve real problems.</p>
+        <br>
+        <p>My current focus is strengthening my programming fundamentals while exploring web development, cybersecurity, AI, and project-based learning. I’m always looking for opportunities to turn what I learn into something useful.</p>
+      </div>
+      <div class="panel reveal" id="skills">
+        <h3>What I’m learning</h3>
+        <div class="skills">
+          <span class="tag">Python</span><span class="tag">Web Development</span><span class="tag">Cybersecurity</span>
+          <span class="tag">Artificial Intelligence</span><span class="tag">Machine Learning</span><span class="tag">Java</span>
+          <span class="tag">DBMS</span><span class="tag">Arduino</span><span class="tag">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">02 — Projects</div><h2>Things I’m building.</h2></div>
+    <div class="cards">
+      <article class="card reveal"><div class="icon">⌘</div><h3>Portfolio Website</h3><p>A responsive personal portfolio designed to showcase my skills, learning journey, projects, and professional links.</p><div class="skills"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
+      <article class="card reveal"><div class="icon">⚡</div><h3>Arduino Project Exploration</h3><p>Exploring practical Arduino-based project ideas that combine programming, electronics, and real-world problem solving.</p><div class="skills"><span class="tag">Arduino</span><span class="tag">C/C++</span><span class="tag">IoT</span></div></article>
+      <article class="card reveal"><div class="icon">◈</div><h3>Python Learning Projects</h3><p>Building small Python programs to strengthen programming fundamentals, logic, algorithms, and automation skills.</p><div class="skills"><span class="tag">Python</span><span class="tag">Logic</span><span class="tag">Algorithms</span></div></article>
+      <article class="card reveal"><div class="icon">◉</div><h3>Future Projects</h3><p>This space is reserved for upcoming projects and internship work. New builds will be added as they are completed.</p><div class="skills"><span class="tag">Coming Soon</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">03 — Experience</div><h2>Learning through experience.</h2></div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="date">Oct 01 — Oct 30, 2026</div>
+        <h3>Project-Based Web Development Intern</h3>
+        <p><strong>CYVEXA</strong> · Online internship. Working on assigned web development tasks and projects independently, with a focus on practical project experience.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="date">Current</div>
+        <h3>B.Tech — Computer Science & Business Systems</h3>
+        <p>Developing foundations across programming, computer science, business systems, databases, cybersecurity, and emerging technologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">04 — Contact</div><h2>Let’s connect.</h2></div>
+    <div class="contact">
+      <a class="contact-item reveal" href="mailto:hussainzaheer364@gmail.com"><small>Email</small>hussainzaheer364@gmail.com</a>
+      <a class="contact-item reveal" target="_blank" rel="noopener" href="https://github.com/hussainzaheer364/Zaheee-portfolio"><small>GitHub</small>github.com/hussainzaheer364</a>
+      <a class="contact-item reveal" target="_blank" rel="noopener" href="https://www.linkedin.com/in/zaheer-hussain-5b9080389"><small>LinkedIn</small>linkedin.com/in/zaheer-hussain-5b9080389</a>
+      <a class="contact-item reveal" href="mailto:hussainzaheer364@gmail.com?subject=Portfolio%20Contact"><small>Open to</small>Internships • Projects • Collaboration</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> MD Zaheer Hussain J F. Built with curiosity.</footer>
+
+<script>
+  const menu=document.querySelector('.menu'), links=document.querySelector('.nav-links');
+  menu.addEventListener('click',()=>links.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
